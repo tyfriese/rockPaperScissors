@@ -5,6 +5,7 @@
     </head>
     <body>
 
+        
         <script>
             // create a function that randomly returns either "Rock" "Paper" or "Scissors"
             function getComputerChoice() {
@@ -13,17 +14,35 @@
                 return moves[randomIndex];
             }
             //write a function that plays a single round of RPS. 
-
             // function should take 2 parameters "playerSelection" and "computerSelection"
-
             // then return a string that decalres a winner like "You lose! Paper beats Rock"
+            function playRound(playerSelection, computerSelection) {
+                // make the user function parameter case-insensitive so inputs can be: rock, Rock, ROCK, RoCk
+                const playerMove = playerSelection.toLowerCase();
+                //check for a tie
+                if (playerMove === computerSelection.toLowerCase()) {
+                    return "It's a draw! You didn't lose... yet!"
+                }
+                //win scenarios!
+                if (
+                    (playerMove === "Rock" && computerSelection === "Scissors") ||
+                    (playerMove === "Paper" && computerSelection === "Rock") ||
+                    (playerMove === "Scissors" && computerSelection === "Paper")
+                 ) {
+                        return `You Won! ${playerMove} beats ${computerSelection}!`;
+                    }
+                //lose scenarios
+                if (
+                    (playerMove === "Rock" && computerSelection === "Paper") ||
+                    (playerMove === "Paper" && computerSelection === "Scissors") ||
+                    (playerMove === "Scissors" && computerSelection === "Rock")
+                ) {
+                    return `You lose! ${computerSelection} beats ${playerMove}!`
+                }
+            }
 
-            // make the user function parameter case-insensitive so inputs can be: rock, Rock, ROCK, RoCk
+            function game()
 
-            // account for ties by replaying the round
-
-            // *note* we want to return the results of the function call, not console.log them. use 'return' 
-            
         </script>
     </body>
 
