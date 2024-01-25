@@ -30,6 +30,7 @@
                     (playerMove === "Scissors" && computerSelection === "Paper")
                  ) {
                         return `You Won! ${playerMove} beats ${computerSelection}!`;
+                        console.log(`You Won! ${playerMove} beats ${computerSelection}!`);
                     }
                 //lose scenarios
                 if (
@@ -38,10 +39,21 @@
                     (playerMove === "Scissors" && computerSelection === "Rock")
                 ) {
                     return `You lose! ${computerSelection} beats ${playerMove}!`
+                    console.log(`You lose! ${computerSelection} beats ${playerMove}!`);
                 }
             }
 
-            function game()
+            function game() {
+                prompt ["Rock", "Paper", "Scissors"];
+                playRound(); console.log
+                playRound();
+                playRound();
+                playRound();
+                playRound();
+            }
+            game();
+            
+
 
         </script>
     </body>
