@@ -30,7 +30,6 @@
                     (playerMove === "Scissors" && computerSelection === "Paper")
                  ) {
                         return `You Won! ${playerMove} beats ${computerSelection}!`;
-                        console.log(`You Won! ${playerMove} beats ${computerSelection}!`);
                     }
                 //lose scenarios
                 if (
@@ -39,20 +38,31 @@
                     (playerMove === "Scissors" && computerSelection === "Rock")
                 ) {
                     return `You lose! ${computerSelection} beats ${playerMove}!`
-                    console.log(`You lose! ${computerSelection} beats ${playerMove}!`);
                 }
             }
 
             function game() {
-                prompt ["Rock", "Paper", "Scissors"];
-                playRound(); console.log
-                playRound();
-                playRound();
-                playRound();
-                playRound();
+                let playerScore = 0;
+                let computerScore = 0;
+
+                for (let round = 0; round < 5; round++) {
+                    const playerSelection = prompt("Would you like a Rock, a piece of a Paper, or some Scissors?");
+                    const computerSelection = getComputerChoice();
+                    const result = playRound(playerSelection, computerSelection);
+
+                    console.log(result);
+
+                    if (result.includes("Won!")) {
+                        playerScore++;
+                    } else if (result.includes("lose!")) {
+                        computerScore++;
+                    }
+                }
             }
             game();
             
+
+
 
 
         </script>
